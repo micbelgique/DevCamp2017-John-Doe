@@ -1,0 +1,4 @@
+C:\Users\Alex\Documents\Projects\Devcamp\MyFirstUnity\Devcamp\WindowsStoreApp\Devcamp\Devcamp.csproj;x86
+C:\Users\Alex\Documents\Projects\Devcamp\MyFirstUnity\Devcamp\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x86
+C:\Users\Alex\Documents\Projects\Devcamp\MyFirstUnity\Devcamp\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
+C:\Users\Alex\Documents\Projects\Devcamp\MyFirstUnity\Devcamp\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
