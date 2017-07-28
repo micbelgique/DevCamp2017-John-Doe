@@ -26,3 +26,8 @@ https://trello.com/b/PgfIbkrJ/devcamp-2017
 we presume openvibe is installed on your system.
 
 you need node
+to install 
+npm install
+
+to start websocket server
+node index.js
