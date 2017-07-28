@@ -20,3 +20,9 @@ https://unity3d.com/fr
 
 trello
 https://trello.com/b/PgfIbkrJ/devcamp-2017
+
+# installation
+
+we presume openvibe is installed on your system.
+
+you need node

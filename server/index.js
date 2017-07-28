@@ -55,42 +55,8 @@ wsServer.on('request', function(request) {
 		}
 		
         if (message.type === 'utf8') {
-            console.log('Received Message: ' + message.utf8Data);
-			
-			
 			var echo=message.utf8Data;
-			if(echo=='get frame') {
-				console.log('find frame');
-
-				getFile('get /star75/B0');
-				getFile('get /star75/B1');
-				getFile('get /star75/B2');
-				getFile('get /star75/B3');
-			}
-			else if(echo=='get opening') {
-				console.log('find opening');
-				getFile('get /star75/O0');
-				getFile('get /star75/O1');
-				getFile('get /star75/O2');
-				getFile('get /star75/O3');
-				getFile('get /star75/handle');
-			}
-			else if(echo=='get transom') {
-				getFile('get /star75/transom');
-			}
-			else if(echo.startsWith('get ')) {
-				console.log('find get');
-				getFile(echo);
-			} 
-			else {
-				console.log('Send Message: ' + echo);
-				clients.forEach(function(client) {
-				  client.sendUTF(echo);
-				});
-			}
-			
-
-			//connection.sendUTF(message.utf8Data);
+            console.log('Received Message: ' + echo);
         }
         else if (message.type === 'binary') {
             console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');
