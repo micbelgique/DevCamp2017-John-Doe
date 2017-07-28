@@ -12,3 +12,11 @@
                                                                       
 # DevCamp2017-John-Doe
 Mémoire des ombres
+
+# used techno
+
+unity 2017.1
+https://unity3d.com/fr
+
+trello
+https://trello.com/b/PgfIbkrJ/devcamp-2017
