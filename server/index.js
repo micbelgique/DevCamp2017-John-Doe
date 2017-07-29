@@ -41,22 +41,11 @@ wsServer.on('request', function(request) {
     console.log((new Date()) + ' Connection accepted.');
     connection.on('message', function(message) {
 		
-		function getFile(file) {
-				var file='./data/'+file.substring(4, file.length)+'.json';
-				fs.readFile(file, 'utf8', function (err,data) {
-				  if (err) {
-					return console.log(err);
-				  }
-					console.log('Send Message: ' + data);
-					clients.forEach(function(client) {
-					  client.sendUTF(data);
-					});
-				});
-		}
-		
         if (message.type === 'utf8') {
 			var echo=message.utf8Data;
-            console.log('Received Message: ' + echo);
+			clients.forEach(function(client) {
+			  client.sendUTF(echo);
+			});
         }
         else if (message.type === 'binary') {
             console.log('Received Binary Message of ' + message.binaryData.length + ' bytes');

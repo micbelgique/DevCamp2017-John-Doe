@@ -6,6 +6,13 @@ from collections import deque
 global debug 
 debug = False
 
+class Message(object):
+	def __init__(self):
+		self.type="command"
+		self.on="Cube"
+		self.Payload = None
+	
+
 class FrequencyCommand(object):
     def __init__(self):
         self.type = "frequency"
@@ -54,19 +61,24 @@ class OVibeSocket(OVBox):
 		self.wst = threading.Thread(target=self.ws.run_forever)
 		self.wst.daemon = True
 		self.wst.start()		
-				
+			
+	def sendMessage(self, command):
+		message = Message()
+		message.Payload = command
+		
+		self.ws.send(json.dumps(message.__dict__))
+
 	def sendFrequency(self, value):
 		frequencyCommand = FrequencyCommand()
 		frequencyCommand.value=value
-		
-		self.ws.send(json.dumps(frequencyCommand.__dict__))
+
+		sendMessage(frequencyCommand)
 	
 	def sendFocus(self, value):
-		focusCommand = FrequencyCommand()
+		focusCommand = FocusCommand()
 		focusCommand.value=value
+		sendMessage(focusCommand)
 
-		self.ws.send(json.dumps(focusCommand.__dict__))
-			
 	def process(self):
 		for chunkIndex in range( len(self.input[0]) ):
 			addFrequency(self.input[0].pop())
